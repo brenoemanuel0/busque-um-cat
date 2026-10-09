@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap");
+
+:root {
+    --rosa-fundo: #ffe8f0;
+    --rosa-claro: #ffd1e3;
+    --rosa: #ff8fb8;
+    --rosa-escuro: #e5568d;
+    --creme: #fffaf5;
+    --texto: #7a4a5e;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    font-family: "Fredoka", "Comic Sans MS", sans-serif;
+    color: var(--texto);
+    background-color: var(--rosa-fundo);
+    background-image:
+        radial-gradient(circle, var(--rosa-claro) 3px, transparent 4px),
+        radial-gradient(circle, #fff 2px, transparent 3px);
+    background-size: 48px 48px, 48px 48px;
+    background-position: 0 0, 24px 24px;
+}
+
+main {
+    width: 100%;
+    max-width: 420px;
+    padding: 36px 28px;
+    text-align: center;
+    background: var(--creme);
+    border: 4px solid var(--rosa-claro);
+    border-radius: 36px;
+    box-shadow: 0 12px 0 var(--rosa-claro), 0 24px 40px rgba(229, 86, 141, 0.2);
+}
+
+h1 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--rosa-escuro);
+    margin-bottom: 24px;
+}
+
+h1::before {
+    content: "🐾 ";
+}
+
+h1::after {
+    content: " 🐾";
+}
+
+button {
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--rosa);
+    border: none;
+    border-radius: 999px;
+    padding: 14px 32px;
+    cursor: pointer;
+    box-shadow: 0 6px 0 var(--rosa-escuro);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+button:hover {
+    background: #ff7aab;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 8px 0 var(--rosa-escuro);
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 var(--rosa-escuro);
+}
+
+button:focus-visible {
+    outline: 4px solid var(--rosa-claro);
+    outline-offset: 4px;
+}
+
+#resultado {
+    margin-top: 28px;
+    min-height: 60px;
+    font-size: 1rem;
+}
+
+#resultado:empty::before {
+    content: "🐱 ...";
+    font-size: 2rem;
+    opacity: 0.5;
+}
+
+#resultado img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+    border: 6px solid #fff;
+    border-radius: 28px;
+    box-shadow: 0 8px 20px rgba(229, 86, 141, 0.3);
+    transform: rotate(-2deg);
+    animation: aparecer 0.5s ease;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: scale(0.6) rotate(-8deg);
+    }
+    70% {
+        transform: scale(1.05) rotate(-2deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(-2deg);
+    }
+}
